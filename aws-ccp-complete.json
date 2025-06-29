@@ -1,0 +1,1514 @@
+{
+  "metadata": {
+    "totalQuestions": 74,
+    "description": "AWS Certified Cloud Practitioner (CCP) practice questions with detailed explanations",
+    "lastUpdated": "2024-12-19",
+    "source": "Course materials and AWS documentation"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "You have set up consolidated billing for several AWS accounts. One of the accounts has purchased a number of reserved instances for 3 years. Which of the following is true regarding this scenario?",
+      "options": [
+        "The Reserved Instance discounts can only be shared with the master account.",
+        "All accounts can receive the hourly cost benefit of the Reserved Instances.",
+        "The purchased instances will have better performance than On-demand instances.",
+        "There are no cost benefits from using consolidated billing; It is for informational purposes only."
+      ],
+      "correct": [0],
+      "explanation": "Consolidated billing allows you to consolidate payment for multiple AWS accounts into a single bill. However, Reserved Instance discounts are only shared with the master account that purchased them. The other accounts in the consolidated billing family cannot automatically benefit from the Reserved Instance pricing. This is a key limitation of consolidated billing - while it provides centralized billing and potential volume discounts, Reserved Instance benefits remain with the purchasing account.",
+      "keyPoints": [
+        "Consolidated billing centralizes payment for multiple AWS accounts",
+        "Reserved Instance discounts are only shared with the master account",
+        "Other accounts in the billing family don't automatically get RI benefits",
+        "Consolidated billing is primarily for centralized billing management",
+        "Volume discounts may apply across the entire billing family"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 2,
+      "question": "What does AWS Snowball provide? (Choose TWO)",
+      "options": [
+        "Built-in computing capabilities that allow customers to process data locally.",
+        "A catalog of third-party software solutions that customers need to build solutions and run their businesses.",
+        "A hybrid cloud storage between on-premises environments and the AWS Cloud.",
+        "An Exabyte-scale data transfer service that allows you to move extremely large amounts of data to AWS.",
+        "Secure transfer of large amounts of data into and out of the AWS."
+      ],
+      "correct": [0, 4],
+      "explanation": "AWS Snowball is a petabyte-scale data transport solution that uses secure appliances to transfer large amounts of data into and out of AWS. It provides built-in computing capabilities (Snowball Edge) that allow customers to process data locally before transferring it to AWS. This is particularly useful for scenarios where internet connectivity is limited or when you need to process data before uploading. Snowball is not a catalog of third-party software, nor is it a hybrid cloud storage service - it's specifically designed for secure, large-scale data transfer.",
+      "keyPoints": [
+        "AWS Snowball is for petabyte-scale data transfer",
+        "Snowball Edge provides local computing capabilities",
+        "Secure appliances are used for data transport",
+        "Ideal for limited internet connectivity scenarios",
+        "Supports both import and export of data to/from AWS"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 3,
+      "question": "An organization has a large number of technical employees who operate their AWS Cloud infrastructure. What does AWS provide to help organize them into teams and then assign the appropriate permissions for each team?",
+      "options": [
+        "IAM roles.",
+        "IAM users.",
+        "IAM user groups.",
+        "AWS Organizations."
+      ],
+      "correct": [2],
+      "explanation": "IAM user groups allow you to organize IAM users into logical collections and assign permissions to the group rather than to individual users. This makes it much easier to manage permissions for large numbers of users by simply adding or removing users from groups. IAM roles are for granting permissions to AWS services or temporary access, while IAM users are individual accounts. AWS Organizations is for managing multiple AWS accounts, not for organizing users within a single account.",
+      "keyPoints": [
+        "IAM user groups organize users into logical collections",
+        "Permissions are assigned to groups, not individual users",
+        "Simplifies permission management for large organizations",
+        "Users can belong to multiple groups",
+        "Follows the principle of least privilege"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 4,
+      "question": "Which of the following helps a customer view the Amazon EC2 billing activity for the past month?",
+      "options": [
+        "AWS Budgets.",
+        "AWS Pricing Calculator.",
+        "AWS Systems Manager.",
+        "AWS Cost & Usage Reports."
+      ],
+      "correct": [3],
+      "explanation": "AWS Cost & Usage Reports provide detailed billing information including EC2 usage and costs. These reports contain comprehensive data about your AWS usage and can be used to analyze costs, track usage trends, and identify cost optimization opportunities. AWS Budgets is for setting spending limits and alerts, AWS Pricing Calculator is for estimating costs before deployment, and AWS Systems Manager is for managing EC2 instances and other AWS resources.",
+      "keyPoints": [
+        "Cost & Usage Reports provide detailed billing information",
+        "Can be used for cost analysis and optimization",
+        "Contains comprehensive usage data",
+        "Supports various output formats (CSV, Parquet)",
+        "Can be delivered to S3 buckets for analysis"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 5,
+      "question": "You want to run a questionnaire application for only one day (without interruption), which Amazon EC2 purchase option should you use?",
+      "options": [
+        "Reserved instances.",
+        "Spot instances.",
+        "Dedicated instances.",
+        "On-demand instances."
+      ],
+      "correct": [3],
+      "explanation": "On-demand instances are the best choice for short-term, uninterrupted workloads. They provide the highest flexibility with no upfront costs or long-term commitments. Since you need the application to run without interruption for exactly one day, on-demand instances ensure availability. Spot instances could be interrupted, reserved instances require longer commitments, and dedicated instances are for compliance requirements, not short-term usage.",
+      "keyPoints": [
+        "On-demand instances provide maximum flexibility",
+        "No upfront costs or long-term commitments",
+        "Ideal for short-term, uninterrupted workloads",
+        "Pay only for what you use",
+        "Highest cost per hour but no commitment risk"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 6,
+      "question": "Which of the following services allows customers to manage their agreements with AWS?",
+      "options": [
+        "AWS Artifact.",
+        "AWS Certificate Manager.",
+        "AWS Systems Manager.",
+        "AWS Organizations."
+      ],
+      "correct": [0],
+      "explanation": "AWS Artifact is a self-service portal for on-demand access to AWS compliance reports and select online agreements. It allows customers to download AWS compliance reports (such as SOC, PCI DSS, ISO, etc.) and manage their agreements with AWS. AWS Certificate Manager is for SSL/TLS certificates, AWS Systems Manager is for managing AWS resources, and AWS Organizations is for managing multiple AWS accounts.",
+      "keyPoints": [
+        "AWS Artifact provides access to compliance reports",
+        "Self-service portal for agreements and reports",
+        "Includes SOC, PCI DSS, ISO compliance documents",
+        "No additional cost for using AWS Artifact",
+        "Supports various compliance frameworks"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 7,
+      "question": "Which of the following are examples of AWS-Managed Services, where AWS is responsible for the operational and maintenance burdens of running the service? (Choose TWO)",
+      "options": [
+        "Amazon VPC.",
+        "Amazon DynamoDB.",
+        "Amazon Elastic MapReduce.",
+        "AWS IAM.",
+        "Amazon Elastic Compute Cloud."
+      ],
+      "correct": [1, 2],
+      "explanation": "Amazon DynamoDB and Amazon EMR are fully managed services where AWS handles the underlying infrastructure, scaling, patching, and maintenance. With DynamoDB, AWS manages the database servers, replication, and scaling. With EMR, AWS manages the Hadoop cluster infrastructure. Amazon VPC, IAM, and EC2 are infrastructure services where customers have more responsibility for management and configuration.",
+      "keyPoints": [
+        "Managed services reduce operational overhead",
+        "AWS handles infrastructure management and scaling",
+        "DynamoDB is a fully managed NoSQL database",
+        "EMR is a managed big data platform",
+        "Customers focus on application logic, not infrastructure"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 8,
+      "question": "Which of the following must an IAM user provide to interact with AWS services using the AWS Command Line Interface (AWS CLI)?",
+      "options": [
+        "Access keys.",
+        "Secret token.",
+        "UserID.",
+        "User name and password."
+      ],
+      "correct": [0],
+      "explanation": "Access keys (Access Key ID and Secret Access Key) are required for programmatic access to AWS services through the CLI, SDKs, or APIs. These keys are used to authenticate and authorize requests to AWS services. Username and password are used for console access, while UserID and Secret token are not standard AWS authentication methods.",
+      "keyPoints": [
+        "Access keys consist of Access Key ID and Secret Access Key",
+        "Required for programmatic access to AWS",
+        "Should be rotated regularly for security",
+        "Different from console username/password",
+        "Can be restricted with IAM policies"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 9,
+      "question": "Select TWO examples of the AWS shared controls.",
+      "options": [
+        "Patch Management.",
+        "IAM Management.",
+        "VPC Management.",
+        "Configuration Management.",
+        "Data Center operations."
+      ],
+      "correct": [0, 3],
+      "explanation": "Patch Management and Configuration Management are shared controls in the AWS shared responsibility model. AWS is responsible for patching the underlying infrastructure, while customers are responsible for patching their applications and operating systems. Configuration management is also shared - AWS manages the configuration of the cloud infrastructure, while customers manage the configuration of their applications and data.",
+      "keyPoints": [
+        "Shared controls require cooperation between AWS and customers",
+        "Patch management is split between infrastructure and applications",
+        "Configuration management covers both platform and customer resources",
+        "AWS handles cloud infrastructure configuration",
+        "Customers handle application and data configuration"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 10,
+      "question": "In order to implement best practices when dealing with a \"Single Point of Failure,\" you should attempt to build as much automation as possible in both detecting and reacting to failure. Which of the following AWS services would help? (Choose TWO)",
+      "options": [
+        "ELB.",
+        "Auto Scaling.",
+        "Amazon Athen.",
+        "ECR.",
+        "Amazon EC2."
+      ],
+      "correct": [0, 1],
+      "explanation": "Elastic Load Balancer (ELB) and Auto Scaling help eliminate single points of failure by distributing traffic across multiple instances and automatically replacing failed instances. ELB provides redundancy by routing traffic to healthy instances, while Auto Scaling ensures that failed instances are automatically replaced and the desired capacity is maintained. This automation helps detect and react to failures without manual intervention.",
+      "keyPoints": [
+        "ELB distributes traffic across multiple instances",
+        "Auto Scaling automatically replaces failed instances",
+        "Both services provide high availability",
+        "Automation reduces manual intervention during failures",
+        "Helps eliminate single points of failure"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 11,
+      "question": "Under the shared responsibility model, which of the following is the responsibility of AWS?",
+      "options": [
+        "Client-side encryption.",
+        "Configuring infrastructure devices.",
+        "Server-side encryption.",
+        "Filtering traffic with Security Groups."
+      ],
+      "correct": [1],
+      "explanation": "Under the AWS shared responsibility model, AWS is responsible for the security 'of' the cloud, which includes configuring and securing the underlying infrastructure devices, data centers, and hardware. Client-side encryption, server-side encryption configuration, and Security Groups are customer responsibilities as they relate to security 'in' the cloud.",
+      "keyPoints": [
+        "AWS is responsible for security 'of' the cloud",
+        "Infrastructure device configuration is AWS responsibility",
+        "Customers are responsible for security 'in' the cloud",
+        "Data center security is handled by AWS",
+        "Hardware and virtualization security is AWS responsibility"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 12,
+      "question": "What does the AWS Health Dashboard provide? (Choose TWO)",
+      "options": [
+        "Detailed troubleshooting guidance to address AWS events impacting your resources.",
+        "Health checks for Auto Scaling instances.",
+        "Recommendations for Cost Optimization.",
+        "A dashboard detailing vulnerabilities in your applications.",
+        "Personalized view of AWS service health."
+      ],
+      "correct": [0, 4],
+      "explanation": "The AWS Health Dashboard provides a personalized view of AWS service health and detailed troubleshooting guidance for events that may impact your resources. It shows service events, planned maintenance, and provides specific guidance for affected resources. It does not provide health checks for Auto Scaling instances, cost optimization recommendations, or application vulnerability details.",
+      "keyPoints": [
+        "Provides personalized service health information",
+        "Shows events that may impact your resources",
+        "Includes detailed troubleshooting guidance",
+        "Covers both general and account-specific events",
+        "Helps with incident response and planning"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 13,
+      "question": "Which of the following is not a benefit of Amazon S3? (Choose TWO)",
+      "options": [
+        "Amazon S3 provides unlimited storage for any type of data.",
+        "Amazon S3 can run any type of application or backend system.",
+        "Amazon S3 stores any number of objects, but with object size limits.",
+        "Amazon S3 can be scaled manually to store and retrieve any amount of data from anywhere.",
+        "Amazon S3 provides 99.999999999% (11 9's) of data durability."
+      ],
+      "correct": [1, 3],
+      "explanation": "Amazon S3 is an object storage service, not a compute service, so it cannot run applications or backend systems. Additionally, S3 scales automatically - there's no manual scaling required. S3 does provide unlimited storage, high durability (11 9's), and can store any number of objects (with individual object size limits of 5TB).",
+      "keyPoints": [
+        "S3 is object storage, not compute",
+        "S3 scales automatically, no manual intervention needed",
+        "S3 provides unlimited storage capacity",
+        "Individual objects are limited to 5TB",
+        "S3 offers 99.999999999% data durability"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 14,
+      "question": "What does AWS provide to deploy popular technologies such as IBM MQ on AWS with the least amount of effort and time?",
+      "options": [
+        "Amazon Aurora.",
+        "Amazon CloudWatch.",
+        "AWS Quick Start reference deployments.",
+        "AWS OpsWorks."
+      ],
+      "correct": [2],
+      "explanation": "AWS Quick Start reference deployments provide pre-built CloudFormation templates and deployment guides for popular technologies like IBM MQ. These templates automate the deployment process and follow AWS best practices, significantly reducing the time and effort required to deploy complex solutions. They include security configurations, monitoring, and other production-ready features.",
+      "keyPoints": [
+        "Quick Start provides pre-built CloudFormation templates",
+        "Automates deployment of popular technologies",
+        "Follows AWS best practices",
+        "Includes security and monitoring configurations",
+        "Reduces deployment time and complexity"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 15,
+      "question": "Which of the following is NOT correct regarding Amazon EC2 On-demand instances?",
+      "options": [
+        "You have to pay a start-up fee when launching a new instance for the first time.",
+        "The on-demand instances follow the AWS pay-as-you-go pricing model.",
+        "With on-demand instances, no longer-term commitments or upfront payments are needed.",
+        "When using on-demand Linux instances, you are charged per second based on an hourly rate."
+      ],
+      "correct": [0],
+      "explanation": "On-demand instances do NOT require any start-up fees. They follow a true pay-as-you-go model where you only pay for the compute time you use, with no upfront costs, long-term commitments, or start-up fees. The per-second billing (for Linux instances) and lack of upfront payments are key benefits of on-demand instances.",
+      "keyPoints": [
+        "No start-up fees for on-demand instances",
+        "True pay-as-you-go pricing model",
+        "No upfront costs or long-term commitments",
+        "Per-second billing for Linux instances",
+        "Maximum flexibility with no financial commitment"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 16,
+      "question": "A company is introducing a new product to their customers, and is expecting a surge in traffic to their web application. As part of their Enterprise Support plan, which of the following provides the company with architectural and scaling guidance?",
+      "options": [
+        "AWS Knowledge Center.",
+        "AWS Health Dashboard.",
+        "Infrastructure Event Management.",
+        "AWS Support Concierge Service."
+      ],
+      "correct": [2],
+      "explanation": "Infrastructure Event Management (IEM) is an Enterprise Support feature that provides architectural and scaling guidance for planned events like product launches. AWS experts work with you to review your architecture, identify potential issues, and provide recommendations for handling increased traffic. This is specifically designed for planned events where you expect significant traffic increases.",
+      "keyPoints": [
+        "IEM is available with Enterprise Support",
+        "Provides architectural guidance for planned events",
+        "Helps prepare for traffic surges",
+        "Includes AWS expert consultation",
+        "Designed for product launches and major events"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 17,
+      "question": "According to the AWS Acceptable Use Policy, which of the following statements is true regarding penetration testing of EC2 instances?",
+      "options": [
+        "Penetration testing is not allowed in AWS.",
+        "Penetration testing is performed automatically by AWS to determine vulnerabilities in your AWS infrastructure.",
+        "Penetration testing can be performed by the customer on their own instances without prior authorization from AWS.",
+        "The AWS customers are only allowed to perform penetration testing on services managed by AWS."
+      ],
+      "correct": [2],
+      "explanation": "AWS allows customers to perform penetration testing on their own EC2 instances without prior authorization, as long as it's against their own infrastructure and follows AWS guidelines. However, testing against AWS infrastructure or other customers' resources is not permitted. AWS does not automatically perform penetration testing on customer infrastructure.",
+      "keyPoints": [
+        "Customers can test their own EC2 instances",
+        "No prior authorization required for self-testing",
+        "Testing must be against your own infrastructure",
+        "AWS infrastructure testing is not permitted",
+        "Must follow AWS security guidelines"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 18,
+      "question": "An organization needs to analyze and process a large number of data sets. Which AWS service should they use?",
+      "options": [
+        "Amazon EMR.",
+        "Amazon MQ.",
+        "Amazon SNS.",
+        "Amazon SQS."
+      ],
+      "correct": [0],
+      "explanation": "Amazon EMR (Elastic MapReduce) is designed for big data processing and analytics. It provides a managed Hadoop framework that can process large amounts of data using distributed computing. Amazon MQ is a message broker service, SNS is for notifications, and SQS is for message queuing - none of these are designed for large-scale data processing and analytics.",
+      "keyPoints": [
+        "EMR is designed for big data processing",
+        "Uses Hadoop framework for distributed computing",
+        "Can process large datasets efficiently",
+        "Supports various big data tools (Spark, Hive, etc.)",
+        "Managed service reduces operational overhead"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 19,
+      "question": "What are the change management tools that helps AWS customers audit and monitor all resource changes in their AWS environment? (Choose TWO)",
+      "options": [
+        "AWS CloudTrail.",
+        "Amazon Comprehend.",
+        "AWS Transit Gateway.",
+        "AWS X-Ray.",
+        "AWS Config."
+      ],
+      "correct": [0, 4],
+      "explanation": "AWS CloudTrail logs all API calls and user activity, providing an audit trail of who did what and when. AWS Config continuously monitors and records your AWS resource configurations, allowing you to track changes over time and assess compliance. Together, these services provide comprehensive change management and auditing capabilities. The other services are for different purposes: Comprehend (NLP), Transit Gateway (networking), and X-Ray (application tracing).",
+      "keyPoints": [
+        "CloudTrail logs all API calls and user activity",
+        "AWS Config monitors resource configurations",
+        "Both services provide audit trails",
+        "Essential for compliance and security",
+        "Help track unauthorized changes"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 20,
+      "question": "Which of the following services allows you to run containerized applications on a cluster of EC2 instances?",
+      "options": [
+        "Amazon ECS.",
+        "AWS Data Pipeline.",
+        "AWS Cloud9.",
+        "AWS Personal Health Dashboard."
+      ],
+      "correct": [0],
+      "explanation": "Amazon ECS (Elastic Container Service) is a fully managed container orchestration service that allows you to run containerized applications on a cluster of EC2 instances. It handles the deployment, scaling, and management of containers. AWS Data Pipeline is for data processing workflows, Cloud9 is an IDE, and Personal Health Dashboard is for monitoring AWS service health.",
+      "keyPoints": [
+        "ECS is a managed container orchestration service",
+        "Runs on EC2 instances in a cluster",
+        "Handles deployment and scaling of containers",
+        "Supports Docker containers",
+        "Integrates with other AWS services"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 21,
+      "question": "A company is migrating its on-premises database to Amazon RDS. What should the company do to ensure Amazon RDS costs are kept to a minimum?",
+      "options": [
+        "Right-size before and after migration.",
+        "Use a Multi-Region Active-Passive architecture.",
+        "Combine On-demand Capacity Reservations with Saving Plans.",
+        "Use a Multi-Region Active-Active architecture."
+      ],
+      "correct": [0],
+      "explanation": "Right-sizing resources before and after migration ensures that you are not over-provisioning or under-provisioning your Amazon RDS instances. This helps minimize costs by matching the instance size to the actual workload requirements. Multi-Region architectures and capacity reservations are more expensive and are used for high availability or disaster recovery, not cost minimization.",
+      "keyPoints": [
+        "Right-sizing matches resources to workload needs",
+        "Reduces unnecessary costs",
+        "Should be done before and after migration",
+        "Over-provisioning leads to wasted spend",
+        "Under-provisioning can impact performance"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 22,
+      "question": "What is the primary storage service used by Amazon RDS database instances?",
+      "options": [
+        "Amazon Glacier.",
+        "Amazon EBS.",
+        "Amazon EFS.",
+        "Amazon S3."
+      ],
+      "correct": [1],
+      "explanation": "Amazon RDS uses Amazon Elastic Block Store (EBS) as its primary storage service for database instances. EBS provides block-level storage volumes that are highly available and durable, making them ideal for database workloads. Amazon S3 and Glacier are object storage services, and EFS is a file storage service.",
+      "keyPoints": [
+        "RDS uses EBS for block-level storage",
+        "EBS is highly available and durable",
+        "Optimized for database workloads",
+        "S3 and Glacier are object storage, not block storage",
+        "EFS is for file storage, not databases"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 23,
+      "question": "Which of the following AWS services is designed with native Multi-AZ fault tolerance in mind? (Choose TWO)",
+      "options": [
+        "Amazon Redshift.",
+        "AWS Snowball.",
+        "Amazon Simple Storage Service.",
+        "Amazon EBS.",
+        "Amazon DynamoDB."
+      ],
+      "correct": [2, 4],
+      "explanation": "Amazon S3 and DynamoDB are designed to be natively multi-AZ, providing high availability and fault tolerance by replicating data across multiple Availability Zones. Redshift, Snowball, and EBS do not provide native multi-AZ fault tolerance in the same way.",
+      "keyPoints": [
+        "S3 and DynamoDB are natively multi-AZ",
+        "High availability and fault tolerance",
+        "Data is automatically replicated",
+        "No manual configuration required",
+        "Supports mission-critical workloads"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 24,
+      "question": "Under the Shared Responsibility Model, which of the following controls do customers fully inherit from AWS? (Choose TWO)",
+      "options": [
+        "Patch management controls.",
+        "Database controls.",
+        "Awareness & Training.",
+        "Environmental controls.",
+        "Physical controls."
+      ],
+      "correct": [3, 4],
+      "explanation": "Customers fully inherit environmental and physical controls from AWS, as these are managed entirely by AWS in their data centers. Patch management, database, and training controls are either shared or customer responsibilities.",
+      "keyPoints": [
+        "Environmental and physical controls are AWS responsibility",
+        "Customers inherit these controls",
+        "Patch management is shared",
+        "Database controls are customer responsibility",
+        "Training is customer responsibility"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 25,
+      "question": "Your application has recently experienced significant global growth, and international users are complaining of high latency. What is the AWS characteristic that can help improve your international users' experience?",
+      "options": [
+        "Elasticity.",
+        "Global reach.",
+        "Data durability.",
+        "High availability."
+      ],
+      "correct": [1],
+      "explanation": "AWS's global reach, with its network of regions and edge locations, allows you to deploy resources closer to your users, reducing latency and improving performance for international users. Elasticity, durability, and high availability are important, but global reach specifically addresses latency for geographically distributed users.",
+      "keyPoints": [
+        "Global reach reduces latency for international users",
+        "AWS has regions and edge locations worldwide",
+        "Resources can be deployed close to users",
+        "Improves application performance",
+        "Supports global business expansion"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 26,
+      "question": "Savings Plans are available for which of the following AWS compute services? (Choose TWO)",
+      "options": [
+        "AWS Batch.",
+        "AWS Outposts.",
+        "Amazon Lightsail.",
+        "Amazon EC2.",
+        "AWS Lambda."
+      ],
+      "correct": [3, 4],
+      "explanation": "Savings Plans are flexible pricing models that apply to Amazon EC2 and AWS Lambda usage. They allow you to save money compared to on-demand pricing by committing to a consistent amount of usage. Savings Plans do not apply to AWS Batch, Outposts, or Lightsail.",
+      "keyPoints": [
+        "Savings Plans apply to EC2 and Lambda",
+        "Offer significant cost savings over on-demand pricing",
+        "Require a usage commitment",
+        "Do not apply to all compute services",
+        "Flexible across instance families and regions"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 27,
+      "question": "A company has business critical workloads hosted on AWS and they are unwilling to accept any downtime. Which of the following is a recommended best practice to protect their workloads in the event of an unexpected natural disaster?",
+      "options": [
+        "Replicate data across multiple Edge Locations worldwide and use Amazon CloudFront to perform automatic failover in the event of an outage.",
+        "Deploy AWS resources across multiple Availability Zones within the same AWS Region.",
+        "Create point-in-time backups in another subnet and recover this data when a disaster occurs.",
+        "Deploy AWS resources to another AWS Region and implement an Active-Active disaster recovery strategy."
+      ],
+      "correct": [3],
+      "explanation": "Deploying resources to another AWS Region and implementing an Active-Active disaster recovery strategy ensures that workloads remain available even if an entire region is affected by a disaster. This is the highest level of disaster recovery and is recommended for business-critical workloads that cannot tolerate downtime.",
+      "keyPoints": [
+        "Active-Active DR spans multiple regions",
+        "Ensures high availability during regional outages",
+        "Recommended for business-critical workloads",
+        "Minimizes downtime and data loss",
+        "Requires careful planning and replication"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 28,
+      "question": "What are the connectivity options that can be used to build hybrid cloud architectures? (Choose TWO)",
+      "options": [
+        "AWS Artifact.",
+        "AWS Cloud9.",
+        "AWS Direct Connect.",
+        "AWS CloudTrail.",
+        "AWS VPN."
+      ],
+      "correct": [2, 4],
+      "explanation": "AWS Direct Connect and AWS VPN are the primary connectivity options for building hybrid cloud architectures, allowing secure and reliable connections between on-premises environments and AWS. Direct Connect provides a dedicated network connection, while VPN provides encrypted connectivity over the internet.",
+      "keyPoints": [
+        "Direct Connect offers dedicated network connectivity",
+        "VPN provides encrypted internet connectivity",
+        "Both enable hybrid cloud architectures",
+        "Support secure data transfer",
+        "Can be used together for redundancy"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 29,
+      "question": "A company has deployed a new web application on multiple Amazon EC2 instances. Which of the following should they use to ensure that the incoming HTTP traffic is distributed evenly across the instances?",
+      "options": [
+        "AWS EC2 Auto Recovery.",
+        "AWS Auto Scaling.",
+        "AWS Network Load Balancer.",
+        "AWS Application Load Balancer."
+      ],
+      "correct": [3],
+      "explanation": "AWS Application Load Balancer (ALB) is designed to distribute HTTP and HTTPS traffic across multiple EC2 instances, providing high availability and fault tolerance for web applications. Auto Scaling is for adjusting the number of instances, and Network Load Balancer is for TCP/UDP traffic.",
+      "keyPoints": [
+        "ALB distributes HTTP/HTTPS traffic",
+        "Provides high availability and fault tolerance",
+        "Supports advanced routing features",
+        "Auto Scaling adjusts instance count, not traffic",
+        "Network Load Balancer is for TCP/UDP traffic"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 30,
+      "question": "Which of the following can help protect your EC2 instances from DDoS attacks? (Choose TWO)",
+      "options": [
+        "AWS CloudHSM.",
+        "Security Groups.",
+        "AWS Batch.",
+        "AWS IAM.",
+        "Network Access Control Lists (Network ACLs)."
+      ],
+      "correct": [1, 4],
+      "explanation": "Security Groups and Network ACLs are AWS networking features that help protect EC2 instances from DDoS and other network-based attacks by controlling inbound and outbound traffic. CloudHSM is for cryptographic operations, Batch is for batch computing, and IAM is for identity management.",
+      "keyPoints": [
+        "Security Groups act as virtual firewalls",
+        "Network ACLs provide subnet-level security",
+        "Both help mitigate DDoS and unauthorized access",
+        "CloudHSM is not for DDoS protection",
+        "IAM is for identity, not network security"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 31,
+      "question": "Which of the following should be considered when performing a TCO analysis to compare the costs of running an application on AWS instead of on-premises?",
+      "options": [
+        "Application development.",
+        "Market research.",
+        "Business analysis.",
+        "Physical hardware."
+      ],
+      "correct": [3],
+      "explanation": "Physical hardware costs are a major component of on-premises TCO and are eliminated or reduced when moving to AWS. Application development, market research, and business analysis are not directly related to infrastructure TCO.",
+      "keyPoints": [
+        "TCO analysis compares on-premises and cloud costs",
+        "Physical hardware is a major on-premises cost",
+        "AWS eliminates/reduces hardware costs",
+        "Other costs include power, cooling, and maintenance",
+        "Development and research are not TCO factors"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 32,
+      "question": "What are the benefits of using the Amazon Relational Database Service? (Choose TWO)",
+      "options": [
+        "Lower administrative burden.",
+        "Complete control over the underlying host.",
+        "Resizable compute capacity.",
+        "Scales automatically to larger or smaller instance types.",
+        "Supports the document and key-value data structure."
+      ],
+      "correct": [0, 2],
+      "explanation": "Amazon RDS reduces administrative burden by automating backups, patching, and maintenance. It also provides resizable compute capacity, allowing you to scale resources as needed. Complete control over the host is not provided, and RDS is not a document/key-value store.",
+      "keyPoints": [
+        "RDS automates backups and maintenance",
+        "Reduces administrative overhead",
+        "Compute capacity is resizable",
+        "Not a document or key-value store",
+        "No host-level access for customers"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 33,
+      "question": "What is the minimum level of AWS support that provides 24x7 access to technical support engineers via phone and chat?",
+      "options": [
+        "Enterprise Support.",
+        "Developer Support.",
+        "Basic Support.",
+        "Business Support."
+      ],
+      "correct": [3],
+      "explanation": "Business Support is the minimum AWS support plan that provides 24x7 access to technical support engineers via phone and chat. Developer Support provides business hours access, and Basic Support does not include direct access to support engineers.",
+      "keyPoints": [
+        "Business Support provides 24x7 access to engineers",
+        "Enterprise Support also provides 24x7 access",
+        "Developer Support is business hours only",
+        "Basic Support has no direct engineer access",
+        "Phone and chat support included in Business plan"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 34,
+      "question": "A company has developed a media transcoding application in AWS. The application is designed to recover quickly from hardware failures. Which one of the following types of instance would be the most cost-effective choice to use?",
+      "options": [
+        "Reserved instances.",
+        "Spot Instances.",
+        "On-Demand instances.",
+        "Dedicated instances."
+      ],
+      "correct": [1],
+      "explanation": "Spot Instances are the most cost-effective option for workloads that can tolerate interruptions and recover quickly from hardware failures. They offer significant discounts compared to On-Demand and Reserved Instances, but can be interrupted by AWS with little notice.",
+      "keyPoints": [
+        "Spot Instances offer the lowest cost",
+        "Best for fault-tolerant, flexible workloads",
+        "Can be interrupted by AWS",
+        "Not suitable for critical, persistent workloads",
+        "Ideal for batch and stateless applications"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 35,
+      "question": "A company has hundreds of VPCs in multiple AWS Regions worldwide. What service does AWS offer to simplify the connection management among the VPCs?",
+      "options": [
+        "VPC Peering.",
+        "AWS Transit Gateway.",
+        "Amazon Connect.",
+        "Security Groups."
+      ],
+      "correct": [1],
+      "explanation": "AWS Transit Gateway simplifies the management of connectivity among hundreds of VPCs across multiple regions. It acts as a central hub for connecting VPCs and on-premises networks, reducing the complexity of managing many peering connections.",
+      "keyPoints": [
+        "Transit Gateway is a central hub for VPC connectivity",
+        "Simplifies network management",
+        "Supports inter-region and on-premises connections",
+        "Reduces peering complexity",
+        "Scales to thousands of VPCs"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 36,
+      "question": "What is one benefit and one drawback of buying a reserved EC2 instance? (Select TWO)",
+      "options": [
+        "Instances can be shut down by AWS at any time with no notification.",
+        "Reserved instances require at least a one-year pricing commitment.",
+        "There is no additional charge for using dedicated instances.",
+        "Reserved instances provide a significant discount compared to on-demand instances.",
+        "Reserved instances are best suited for periodic workloads."
+      ],
+      "correct": [1, 3],
+      "explanation": "Reserved Instances provide a significant discount compared to On-Demand pricing, but require a one-year or three-year commitment. They are best for steady-state workloads, not periodic workloads. AWS does not shut down reserved instances without notice, and dedicated instances have separate pricing.",
+      "keyPoints": [
+        "Reserved Instances offer cost savings",
+        "Require a long-term commitment",
+        "Best for steady-state workloads",
+        "Not suitable for periodic or unpredictable workloads",
+        "Dedicated instances have separate pricing"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 37,
+      "question": "What is the most cost-effective purchasing option for running a set of EC2 instances that must always be available for a period of two months?",
+      "options": [
+        "On-Demand Instances.",
+        "Spot Instances.",
+        "Reserved Instances - All Upfront.",
+        "Reserved Instances - No Upfront."
+      ],
+      "correct": [0],
+      "explanation": "On-Demand Instances are the most cost-effective for short-term, always-on workloads that last less than a year. Reserved Instances require a minimum one-year commitment, and Spot Instances can be interrupted, making them unsuitable for always-on requirements.",
+      "keyPoints": [
+        "On-Demand is best for short-term, always-on workloads",
+        "No long-term commitment required",
+        "Reserved Instances require at least one year",
+        "Spot Instances can be interrupted",
+        "On-Demand offers flexibility for short durations"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 38,
+      "question": "A developer needs to set up an SSL security certificate for a client's eCommerce website in order to use the HTTPS protocol. Which of the following AWS services can be used to deploy the required SSL server certificates? (Choose TWO)",
+      "options": [
+        "Amazon Route 53.",
+        "AWS ACM.",
+        "AWS Directory Service.",
+        "AWS Identity & Access Management.",
+        "AWS Data Pipeline."
+      ],
+      "correct": [0, 1],
+      "explanation": "Amazon Route 53 and AWS Certificate Manager (ACM) can be used to deploy SSL/TLS certificates for secure websites. ACM manages the provisioning, deployment, and renewal of certificates, while Route 53 is used for DNS management and can integrate with ACM for secure domain validation.",
+      "keyPoints": [
+        "ACM manages SSL/TLS certificates",
+        "Route 53 integrates with ACM for DNS validation",
+        "Certificates enable HTTPS for secure communication",
+        "ACM automates certificate renewal",
+        "IAM can store but not deploy SSL certificates"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 39,
+      "question": "Which support plan includes AWS Support Concierge Service?",
+      "options": [
+        "Premium Support.",
+        "Business Support.",
+        "Enterprise Support.",
+        "Standard Support."
+      ],
+      "correct": [2],
+      "explanation": "Enterprise Support includes the AWS Support Concierge Service, which provides account and billing assistance. Business Support does not include the Concierge Service.",
+      "keyPoints": [
+        "Enterprise Support includes Concierge Service",
+        "Concierge provides account and billing assistance",
+        "Business Support does not include Concierge",
+        "Premium/Standard Support are not AWS plans",
+        "Concierge helps with non-technical issues"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 40,
+      "question": "A company is planning to migrate a database with high read/write activity to AWS. What is the best storage option to use?",
+      "options": [
+        "AWS Storage Gateway.",
+        "Amazon S3.",
+        "Amazon EBS.",
+        "Amazon Glacier."
+      ],
+      "correct": [2],
+      "explanation": "Amazon EBS (Elastic Block Store) is the best storage option for databases with high read/write activity. It provides low-latency, high-performance block storage that is ideal for database workloads. S3 and Glacier are object storage services, and Storage Gateway is for hybrid storage integration.",
+      "keyPoints": [
+        "EBS is optimized for high-performance databases",
+        "Provides low-latency block storage",
+        "S3 and Glacier are not suitable for databases",
+        "Storage Gateway is for hybrid storage",
+        "EBS supports snapshots and backups"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 41,
+      "question": "How can AWS customers track and avoid over-spending on underutilized reserved instances?",
+      "options": [
+        "Customers can add all AWS accounts to an AWS Organization, enable Consolidated Billing, and turn off Reserved Instance sharing.",
+        "Customers can use Amazon Neptune to track and analyze their usage patterns, detect underutilized reserved instances, and then sell them on the Amazon EC2 Reserved Instance Marketplace.",
+        "Customers can use the AWS Budgets service to track the reserved instances usage and set up alert notifications when their utilization drops below the threshold that they define.",
+        "Customers can use Amazon CloudTrail to automatically check for unused reservations and get recommendations to reduce their bill."
+      ],
+      "correct": [2],
+      "explanation": "AWS Budgets allows customers to set custom cost and usage budgets and receive alerts when usage exceeds thresholds, including for reserved instance utilization. This helps avoid overspending on underutilized resources. Neptune is a graph database, and CloudTrail is for auditing API calls, not cost tracking.",
+      "keyPoints": [
+        "AWS Budgets tracks reserved instance usage",
+        "Custom alerts help avoid overspending",
+        "Neptune is not for cost tracking",
+        "CloudTrail is for API auditing",
+        "Budgets can be set for cost and usage"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 42,
+      "question": "What does AWS Service Catalog provide?",
+      "options": [
+        "It enables customers to quickly find descriptions and use cases for AWS services.",
+        "It enables customers to explore the different catalogs of AWS services.",
+        "It simplifies organizing and governing commonly deployed IT services.",
+        "It allows developers to deploy infrastructure on AWS using familiar programming languages."
+      ],
+      "correct": [2],
+      "explanation": "AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS. It simplifies governance and helps ensure compliance by controlling which services and versions are available to users.",
+      "keyPoints": [
+        "Service Catalog manages approved IT services",
+        "Simplifies governance and compliance",
+        "Controls which services are available to users",
+        "Not for exploring all AWS services",
+        "Helps standardize deployments"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 43,
+      "question": "Which of the following AWS Services helps with planning application migration to the AWS Cloud?",
+      "options": [
+        "AWS Snowball Migration Service.",
+        "AWS Application Discovery Service.",
+        "AWS DMS.",
+        "AWS Migration Hub."
+      ],
+      "correct": [1],
+      "explanation": "AWS Application Discovery Service helps plan application migration by collecting usage and configuration data from on-premises servers, which can be used to estimate migration effort and costs. DMS is for database migration, and Migration Hub tracks migration progress.",
+      "keyPoints": [
+        "Application Discovery Service collects server data",
+        "Helps estimate migration effort and cost",
+        "DMS is for database migration",
+        "Migration Hub tracks migration progress",
+        "Discovery Service is for planning, not execution"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 44,
+      "question": "A company is trying to analyze the costs applied to their AWS account recently. Which of the following provides them the most granular data about their AWS costs and usage?",
+      "options": [
+        "Amazon Machine Image.",
+        "AWS Cost Explorer.",
+        "AWS Cost & Usage Report.",
+        "Amazon CloudWatch."
+      ],
+      "correct": [2],
+      "explanation": "AWS Cost & Usage Report provides the most detailed and granular data about AWS costs and usage, down to the resource level. Cost Explorer is for visualizing and analyzing costs, but the Cost & Usage Report is the raw data source.",
+      "keyPoints": [
+        "Cost & Usage Report is the most granular",
+        "Provides resource-level cost data",
+        "Cost Explorer is for visualization",
+        "CloudWatch is for monitoring, not billing",
+        "Machine Images are not related to billing"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 45,
+      "question": "TYMO Cloud Corp is looking forward to migrating their entire on-premises data center to AWS. What tool can they use to perform a cost-benefit analysis of moving to the AWS Cloud?",
+      "options": [
+        "AWS Cost Explorer.",
+        "AWS TCO Calculator.",
+        "AWS Budgets.",
+        "AWS Pricing Calculator."
+      ],
+      "correct": [1],
+      "explanation": "The AWS Total Cost of Ownership (TCO) Calculator helps organizations compare the cost of running workloads on AWS with on-premises environments, including hardware, software, and operational costs.",
+      "keyPoints": [
+        "TCO Calculator compares AWS and on-premises costs",
+        "Includes hardware, software, and operational costs",
+        "Cost Explorer is for AWS usage only",
+        "Budgets is for cost control, not analysis",
+        "Pricing Calculator estimates AWS costs only"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 46,
+      "question": "Which of the following activities supports the Operational Excellence pillar of the AWS Well-Architected Framework?",
+      "options": [
+        "Using AWS Trusted Advisor to find underutilized resources.",
+        "Using AWS CloudTrail to record user activities.",
+        "Using AWS CloudFormation to manage infrastructure as code.",
+        "Deploying an application in multiple Availability Zones."
+      ],
+      "correct": [2],
+      "explanation": "Using AWS CloudFormation to manage infrastructure as code supports the Operational Excellence pillar by enabling repeatable, automated, and auditable infrastructure deployments.",
+      "keyPoints": [
+        "CloudFormation enables infrastructure as code",
+        "Supports automation and repeatability",
+        "Operational Excellence is about continuous improvement",
+        "Trusted Advisor is for cost and security",
+        "Multi-AZ is for reliability, not operational excellence"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 47,
+      "question": "Which AWS database service automatically scales to meet required throughput capacity and offers single-digit millisecond latency? (Choose TWO)",
+      "options": [
+        "Automatically scales to meet required throughput capacity.",
+        "Provides resizable instances to match the current demand.",
+        "Supports both relational and non-relational data models.",
+        "Offers extremely low (single-digit millisecond) latency.",
+        "Supports the most popular NoSQL database engines such as CouchDB and MongoDB."
+      ],
+      "correct": [0, 3],
+      "explanation": "Amazon DynamoDB automatically scales throughput and provides single-digit millisecond latency, making it ideal for high-performance applications. It is a NoSQL database, not a relational database.",
+      "keyPoints": [
+        "DynamoDB is a NoSQL database",
+        "Automatically scales throughput",
+        "Single-digit millisecond latency",
+        "Not a relational database",
+        "Popular for high-performance workloads"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 48,
+      "question": "As part of the AWS Migration Acceleration Program (MAP), what does AWS provide to accelerate Enterprise adoption of AWS? (Choose TWO)",
+      "options": [
+        "AWS Partners.",
+        "AWS Artifact.",
+        "AWS Professional Services.",
+        "Amazon Athena.",
+        "Amazon PinPoint."
+      ],
+      "correct": [0, 2],
+      "explanation": "AWS MAP provides access to AWS Partners and AWS Professional Services to help enterprises migrate workloads to AWS quickly and efficiently.",
+      "keyPoints": [
+        "MAP accelerates enterprise cloud adoption",
+        "Partners and Professional Services provide expertise",
+        "Artifact is for compliance, not migration",
+        "Athena and PinPoint are not migration tools",
+        "MAP includes funding and technical support"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 49,
+      "question": "Which of the following allows you to create new RDS instances? (Choose TWO)",
+      "options": [
+        "AWS CodeDeploy.",
+        "AWS Quick Starts.",
+        "AWS CloudFormation.",
+        "AWS DMS.",
+        "AWS Management Console."
+      ],
+      "correct": [2, 4],
+      "explanation": "You can create new RDS instances using AWS CloudFormation (infrastructure as code) and the AWS Management Console (manual setup). CodeDeploy is for application deployment, Quick Starts are for reference deployments, and DMS is for database migration.",
+      "keyPoints": [
+        "CloudFormation automates RDS instance creation",
+        "Management Console allows manual creation",
+        "CodeDeploy is not for databases",
+        "Quick Starts are reference architectures",
+        "DMS is for migration, not creation"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 50,
+      "question": "Which AWS Service allows customers to download AWS SOC & PCI reports?",
+      "options": [
+        "AWS Well-Architected Tool.",
+        "AWS Artifact.",
+        "AWS Glue.",
+        "Amazon Chime."
+      ],
+      "correct": [1],
+      "explanation": "AWS Artifact is the portal for on-demand access to AWS compliance reports, including SOC and PCI reports.",
+      "keyPoints": [
+        "Artifact provides compliance reports",
+        "SOC & PCI reports are available on-demand",
+        "Well-Architected Tool is for architecture reviews",
+        "Glue is for ETL, Chime is for communication",
+        "Artifact is free to use for AWS customers"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 51,
+      "question": "A Cloud Practitioner is developing a disaster recovery plan and intends to replicate data between multiple geographic areas. Which of the following meets these requirements?",
+      "options": [
+        "AWS Accounts",
+        "AWS Regions",
+        "Availability Zones",
+        "Edge locations"
+      ],
+      "correct": [1],
+      "explanation": "AWS Regions are separate geographic areas that allow you to replicate data for disaster recovery. Availability Zones are within a region, and Edge locations are for content delivery.",
+      "keyPoints": [
+        "Regions enable geographic data replication",
+        "Disaster recovery requires cross-region replication",
+        "AZs are for high availability within a region",
+        "Edge locations are for CDN, not DR",
+        "Multiple accounts do not provide geographic separation"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 52,
+      "question": "What is the MINIMUM AWS Support plan level that will provide users with access to the AWS Support API?",
+      "options": [
+        "Developer",
+        "Enterprise",
+        "Business",
+        "Basic"
+      ],
+      "correct": [2],
+      "explanation": "Business Support is the minimum plan that provides access to the AWS Support API. Developer and Basic do not include API access.",
+      "keyPoints": [
+        "Support API requires Business or Enterprise plan",
+        "Developer and Basic do not include API access",
+        "API allows programmatic support case management",
+        "Business plan is the minimum required",
+        "Enterprise includes all Business features"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 53,
+      "question": "A company has deployed several relational databases on Amazon EC2 instances. Every month, the database software vendor releases new security patches that need to be applied to the databases. What is the MOST efficient way to apply the security patches?",
+      "options": [
+        "Connect to each database instance on a monthly basis, and download and apply the necessary security patches from the vendor.",
+        "Enable automatic patching for the instances using the Amazon RDS console.",
+        "In AWS Config, configure a rule for the instances and the required patch level.",
+        "Use AWS Systems Manager to automate database patching according to a schedule."
+      ],
+      "correct": [3],
+      "explanation": "AWS Systems Manager can automate patching for EC2 instances, making it the most efficient way to keep databases up to date. RDS console is for RDS, not EC2. Manual patching is inefficient, and AWS Config is for compliance, not patching.",
+      "keyPoints": [
+        "Systems Manager automates patching for EC2",
+        "Manual patching is inefficient",
+        "RDS console is for RDS, not EC2",
+        "Config is for compliance, not patching",
+        "Automation reduces operational overhead"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 54,
+      "question": "An Amazon EC2 instance runs only when needed yet must remain active for the duration of the process. What is the most appropriate purchasing option?",
+      "options": [
+        "Dedicated Instances",
+        "Spot Instances",
+        "On-Demand Instances",
+        "Reserved Instances"
+      ],
+      "correct": [2],
+      "explanation": "On-Demand Instances are best for workloads that run only when needed and must remain active for the duration of the process. Spot Instances can be interrupted, and Reserved Instances require a long-term commitment.",
+      "keyPoints": [
+        "On-Demand is for flexible, short-term workloads",
+        "Spot can be interrupted",
+        "Reserved requires long-term commitment",
+        "Dedicated is for compliance, not flexibility",
+        "On-Demand charges only for usage time"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 55,
+      "question": "Which AWS dashboard displays relevant and timely information to help users manage events in progress, and provides proactive notifications to help plan for scheduled activities?",
+      "options": [
+        "AWS Service Health Dashboard",
+        "AWS Personal Health Dashboard",
+        "AWS Trusted Advisor dashboard",
+        "Amazon CloudWatch dashboard"
+      ],
+      "correct": [1],
+      "explanation": "AWS Personal Health Dashboard provides account-specific information and proactive notifications about events that may impact your resources. Service Health Dashboard is for general AWS service status.",
+      "keyPoints": [
+        "Personal Health Dashboard is account-specific",
+        "Provides proactive notifications",
+        "Service Health Dashboard is general",
+        "CloudWatch is for monitoring",
+        "Trusted Advisor is for recommendations"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 56,
+      "question": "Which AWS hybrid storage service enables a user's on-premises applications to seamlessly use AWS Cloud storage?",
+      "options": [
+        "AWS Backup",
+        "Amazon Connect",
+        "AWS Direct Connect",
+        "AWS Storage Gateway"
+      ],
+      "correct": [3],
+      "explanation": "AWS Storage Gateway enables on-premises applications to use AWS Cloud storage seamlessly, providing hybrid cloud storage integration.",
+      "keyPoints": [
+        "Storage Gateway bridges on-premises and cloud storage",
+        "Supports file, volume, and tape gateways",
+        "Seamless integration for applications",
+        "Direct Connect is for networking, not storage",
+        "Backup and Connect are not storage gateways"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 57,
+      "question": "What is the most efficient way to establish network connectivity from on-premises to multiple VPCs in different AWS Regions?",
+      "options": [
+        "Use AWS Direct Connect",
+        "Use AWS VPN",
+        "Use AWS Client VPN",
+        "Use an AWS Transit Gateway"
+      ],
+      "correct": [3],
+      "explanation": "AWS Transit Gateway is the most efficient way to connect on-premises networks to multiple VPCs across different regions, simplifying network management.",
+      "keyPoints": [
+        "Transit Gateway simplifies multi-VPC connectivity",
+        "Supports inter-region connections",
+        "Direct Connect is for dedicated links",
+        "VPN is for encrypted connections, not multi-VPC",
+        "Client VPN is for end-user access"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 58,
+      "question": "Which tool can be used to monitor AWS service limits?",
+      "options": [
+        "AWS Total Cost of Ownership (TCO) Calculator",
+        "AWS Trusted Advisor",
+        "AWS Personal Health Dashboard",
+        "AWS Cost and Usage report"
+      ],
+      "correct": [1],
+      "explanation": "AWS Trusted Advisor monitors service limits and provides recommendations to optimize your AWS environment.",
+      "keyPoints": [
+        "Trusted Advisor monitors service limits",
+        "Provides optimization recommendations",
+        "TCO Calculator is for cost analysis",
+        "Personal Health Dashboard is for events",
+        "Cost and Usage report is for billing"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 59,
+      "question": "Which AWS service or feature allows a user to easily scale connectivity among thousands of VPCs?",
+      "options": [
+        "VPC peering",
+        "AWS Transit Gateway",
+        "AWS Direct Connect",
+        "AWS Global Accelerator"
+      ],
+      "correct": [1],
+      "explanation": "AWS Transit Gateway allows users to scale connectivity among thousands of VPCs, acting as a central hub for network management.",
+      "keyPoints": [
+        "Transit Gateway is a central hub for VPC connectivity",
+        "Scales to thousands of VPCs",
+        "Reduces peering complexity",
+        "Direct Connect is for dedicated links",
+        "Global Accelerator is for global app performance"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 60,
+      "question": "A company needs protection from expanded distributed denial of service (DDoS) attacks on its website and assistance from AWS experts during such events. Which AWS managed service will meet these requirements?",
+      "options": [
+        "AWS Shield Advanced",
+        "AWS Firewall Manager",
+        "AWS WAF",
+        "Amazon GuardDuty"
+      ],
+      "correct": [0],
+      "explanation": "AWS Shield Advanced provides advanced DDoS protection and access to the AWS DDoS Response Team (DRT) for expert assistance during attacks.",
+      "keyPoints": [
+        "Shield Advanced protects against DDoS attacks",
+        "Includes access to AWS DDoS Response Team",
+        "Firewall Manager is for policy management",
+        "WAF is for web application firewall",
+        "GuardDuty is for threat detection"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 61,
+      "question": "AWS Trusted Advisor provides recommendations on which of the following? (Choose two.)",
+      "options": [
+        "Cost optimization",
+        "Auditing",
+        "Serverless architecture",
+        "Performance",
+        "Scalability"
+      ],
+      "correct": [0, 3],
+      "explanation": "AWS Trusted Advisor provides recommendations for cost optimization and performance, among other categories. It does not directly provide recommendations for serverless architecture or scalability as a separate category.",
+      "keyPoints": [
+        "Trusted Advisor covers cost and performance",
+        "Also checks security, fault tolerance, and service limits",
+        "Helps optimize AWS environments",
+        "Recommendations are actionable",
+        "Not focused on serverless or scalability alone"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 62,
+      "question": "Which of the following tasks can only be performed after signing in with AWS account root user credentials? (Choose two.)",
+      "options": [
+        "Closing an AWS account",
+        "Creating a new IAM policy",
+        "Changing AWS Support plans",
+        "Attaching a role to an Amazon EC2 instance",
+        "Generating access keys for IAM users"
+      ],
+      "correct": [0, 2],
+      "explanation": "Only the root user can close an AWS account and change AWS Support plans. Creating IAM policies, attaching roles, and generating access keys for IAM users can be done by users with appropriate permissions.",
+      "keyPoints": [
+        "Root user required for account closure",
+        "Root user required for support plan changes",
+        "Other tasks can be delegated to IAM users",
+        "Root user should be used sparingly",
+        "Follow least privilege principle"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 63,
+      "question": "A company operating in the AWS Cloud requires separate invoices for specific environments, such as development, testing, and production. How can this be achieved?",
+      "options": [
+        "Use multiple AWS accounts",
+        "Use resource tagging",
+        "Use multiple VPCs",
+        "Use Cost Explorer"
+      ],
+      "correct": [0],
+      "explanation": "Using multiple AWS accounts allows for separate billing and invoices for different environments. Resource tagging and Cost Explorer help with cost allocation, but not separate invoices.",
+      "keyPoints": [
+        "Multiple accounts enable separate invoices",
+        "Tagging is for cost allocation, not invoicing",
+        "VPCs do not affect billing",
+        "Cost Explorer is for analysis, not invoicing",
+        "Best practice for environment separation"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 64,
+      "question": "Which AWS service or feature allows the user to manage cross-region application traffic?",
+      "options": [
+        "Amazon AppStream 2.0",
+        "Amazon VPC",
+        "Elastic Load Balancer",
+        "Amazon Route 53"
+      ],
+      "correct": [3],
+      "explanation": "Amazon Route 53 is AWS's DNS service and can route traffic across regions using routing policies such as latency-based routing, geolocation, and failover.",
+      "keyPoints": [
+        "Route 53 manages cross-region traffic",
+        "Supports advanced routing policies",
+        "ELB is for in-region load balancing",
+        "VPC is for networking, not DNS",
+        "AppStream 2.0 is for application streaming"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 65,
+      "question": "A company must store critical business data in Amazon S3 with a backup to another AWS Region. How can this be achieved?",
+      "options": [
+        "Use an Amazon CloudFront Content Delivery Network (CDN) to cache data globally",
+        "Set up Amazon S3 cross-region replication to another AWS Region",
+        "Configure the AWS Backup service to back up to the data to another AWS Region",
+        "Take Amazon S3 bucket snapshots and copy that data to another AWS Region"
+      ],
+      "correct": [1],
+      "explanation": "Amazon S3 cross-region replication automatically copies objects from one bucket to another in a different region, providing backup and disaster recovery.",
+      "keyPoints": [
+        "S3 cross-region replication provides backup",
+        "Automates copying to another region",
+        "CDN is for content delivery, not backup",
+        "AWS Backup is not for S3 cross-region",
+        "Snapshots are not a native S3 feature"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 66,
+      "question": "Which components are required to build a successful site-to-site VPN connection on AWS? (Choose two.)",
+      "options": [
+        "Internet gateway",
+        "NAT gateway",
+        "Customer gateway",
+        "Transit gateway",
+        "Virtual private gateway"
+      ],
+      "correct": [2, 4],
+      "explanation": "A site-to-site VPN requires a customer gateway (on-premises) and a virtual private gateway (AWS side). Internet and NAT gateways are for internet access, and Transit Gateway is for connecting multiple VPCs.",
+      "keyPoints": [
+        "Customer gateway is on-premises device",
+        "Virtual private gateway is AWS endpoint",
+        "Both are required for VPN",
+        "Internet/NAT gateways are not for VPN",
+        "Transit Gateway is for VPC connectivity"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 67,
+      "question": "Which of the following AWS services are serverless? (Choose two.)",
+      "options": [
+        "AWS Lambda",
+        "Amazon Elasticsearch Service",
+        "AWS Elastic Beanstalk",
+        "Amazon DynamoDB",
+        "Amazon Redshift"
+      ],
+      "correct": [0, 3],
+      "explanation": "AWS Lambda and Amazon DynamoDB are serverless services. Lambda runs code without provisioning servers, and DynamoDB is a serverless NoSQL database. Elasticsearch, Beanstalk, and Redshift require server management.",
+      "keyPoints": [
+        "Lambda is serverless compute",
+        "DynamoDB is serverless NoSQL database",
+        "No server management required",
+        "Other services require server provisioning",
+        "Serverless scales automatically"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 68,
+      "question": "Which of the following assist in identifying costs by department? (Choose two.)",
+      "options": [
+        "Using tags on resources",
+        "Using multiple AWS accounts",
+        "Using an account manager",
+        "Using AWS Trusted Advisor",
+        "Using Consolidated Billing"
+      ],
+      "correct": [0, 1],
+      "explanation": "Tagging resources and using multiple AWS accounts are the primary ways to identify and allocate costs by department. Trusted Advisor and Consolidated Billing help with cost management but not direct allocation by department.",
+      "keyPoints": [
+        "Tags enable cost allocation by department",
+        "Multiple accounts separate costs",
+        "Trusted Advisor is for optimization",
+        "Consolidated Billing is for payment, not allocation",
+        "Account manager is not a technical solution"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 69,
+      "question": "Under the AWS shared responsibility model, which of the following is a responsibility of AWS?",
+      "options": [
+        "Enabling server-side encryption for objects stored in S3",
+        "Applying AWS IAM security policies",
+        "Patching the operating system on an Amazon EC2 instance",
+        "Applying updates to the hypervisor"
+      ],
+      "correct": [3],
+      "explanation": "AWS is responsible for patching and updating the hypervisor as part of the security 'of' the cloud. Customers are responsible for encryption, IAM policies, and OS patching.",
+      "keyPoints": [
+        "AWS patches the hypervisor",
+        "Customers patch the OS and manage IAM",
+        "Shared responsibility model",
+        "AWS manages infrastructure security",
+        "Customers manage data and access"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 70,
+      "question": "An architecture design includes Amazon EC2, an Elastic Load Balancer, and Amazon RDS. What is the BEST way to get a monthly cost estimation for this architecture?",
+      "options": [
+        "Open an AWS Support case, provide the architecture proposal, and ask for a monthly cost estimation.",
+        "Collect the published prices of the AWS services and calculate the monthly estimate.",
+        "Use the AWS Simple Monthly Calculator to estimate the monthly cost.",
+        "Use the AWS Total Cost of Ownership (TCO) Calculator to estimate the monthly cost."
+      ],
+      "correct": [2],
+      "explanation": "The AWS Simple Monthly Calculator (now replaced by the AWS Pricing Calculator) is the best tool for estimating monthly costs for a specific architecture.",
+      "keyPoints": [
+        "Pricing Calculator estimates monthly costs",
+        "Input architecture details for accuracy",
+        "TCO Calculator is for cloud vs. on-premises",
+        "Support case is not required for estimates",
+        "Manual calculation is error-prone"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 71,
+      "question": "Which are benefits of using Amazon RDS over Amazon EC2 when running relational databases on AWS? (Choose two.)",
+      "options": [
+        "Automated backups",
+        "Schema management",
+        "Indexing of tables",
+        "Software patching",
+        "Extract, transform, and load (ETL) management"
+      ],
+      "correct": [0, 3],
+      "explanation": "Amazon RDS provides automated backups and software patching, reducing operational overhead compared to managing databases on EC2.",
+      "keyPoints": [
+        "RDS automates backups and patching",
+        "Reduces operational burden",
+        "EC2 requires manual management",
+        "Schema and indexing are database features",
+        "ETL is not a core RDS feature"
+      ],
+      "multiSelect": true
+    },
+    {
+      "id": 72,
+      "question": "Which AWS service can be used to track resource changes and establish compliance?",
+      "options": [
+        "Amazon CloudWatch",
+        "AWS Config",
+        "AWS CloudTrail",
+        "AWS Trusted Advisor"
+      ],
+      "correct": [1],
+      "explanation": "AWS Config tracks resource changes and helps establish compliance by recording configuration changes and evaluating them against rules.",
+      "keyPoints": [
+        "Config tracks resource changes",
+        "Helps with compliance and auditing",
+        "CloudTrail logs API calls",
+        "CloudWatch is for monitoring",
+        "Trusted Advisor is for recommendations"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 73,
+      "question": "Which AWS service can be used to provide an on-demand, cloud-based contact center?",
+      "options": [
+        "AWS Direct Connect",
+        "Amazon Connect",
+        "AWS Support Center",
+        "AWS Managed Services"
+      ],
+      "correct": [1],
+      "explanation": "Amazon Connect is AWS's cloud-based contact center service, providing scalable and flexible customer engagement.",
+      "keyPoints": [
+        "Amazon Connect is a cloud contact center",
+        "Scalable and on-demand",
+        "Direct Connect is for networking",
+        "Support Center is for AWS support",
+        "Managed Services is for operations"
+      ],
+      "multiSelect": false
+    },
+    {
+      "id": 74,
+      "question": "What is the customer's responsibility when using AWS Lambda?",
+      "options": [
+        "Operating system configuration",
+        "Application management",
+        "Platform management",
+        "Code encryption"
+      ],
+      "correct": [1],
+      "explanation": "With AWS Lambda, customers are responsible for managing their application code. AWS manages the underlying infrastructure, operating system, and platform.",
+      "keyPoints": [
+        "Customers manage Lambda application code",
+        "AWS manages infrastructure and OS",
+        "Platform management is AWS's responsibility",
+        "Code encryption is optional, not required",
+        "Serverless abstracts infrastructure management"
+      ],
+      "multiSelect": false
+    }
+  ]
+} 
