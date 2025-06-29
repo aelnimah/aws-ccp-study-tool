@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS CCP Study Tool</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Interactive AWS Certified Cloud Practitioner study tool with 74 practice questions">
+    <meta name="theme-color" content="#64ffda">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AWS CCP">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMwZjBmMjMiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjNjRmZmRhIj4KPHBhdGggZD0iTTEyIDJMMiA3djEwYzAgNS41IDQuNSA5IDEwIDloMGM1LjUgMCAxMC0zLjUgMTAtOVY3bC0xMC01em0wIDJsOCA0djEwYzAgMy45LTMuMSA3LTcgN3MtNy0zLjEtNy03VjZsOC00eiIvPgo8cGF0aCBkPSJNMTIgNkw2IDl2N2MwIDMuMyAyLjcgNiA2IDZzNi0yLjcgNi02VjlsLTYtM3oiLz4KPC9zdmc+Cjwvc3ZnPgo=">
+    
     <style>
         * {
             margin: 0;
@@ -285,6 +299,74 @@
             color: #ff6b6b;
         }
 
+        /* Install prompt styles */
+        .install-prompt {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #1a1a2e;
+            border: 1px solid #64ffda;
+            border-radius: 12px;
+            padding: 15px;
+            display: none;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .install-prompt.show {
+            display: block;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .install-prompt h3 {
+            color: #64ffda;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .install-prompt p {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .install-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .install-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .install-btn.primary {
+            background: #64ffda;
+            color: #0f0f23;
+        }
+
+        .install-btn.secondary {
+            background: transparent;
+            color: #a0a0a0;
+            border: 1px solid #3a3a5a;
+        }
+
         @media (max-width: 600px) {
             body {
                 padding: 15px;
@@ -318,6 +400,12 @@
             .stats {
                 flex-direction: column;
                 gap: 15px;
+            }
+
+            .install-prompt {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
             }
         }
     </style>
@@ -375,7 +463,66 @@
         </div>
     </div>
 
+    <!-- Install Prompt -->
+    <div class="install-prompt" id="installPrompt">
+        <h3>Install AWS CCP Study Tool</h3>
+        <p>Add this app to your home screen for quick access and offline study!</p>
+        <div class="install-buttons">
+            <button class="install-btn primary" id="installBtn">Install</button>
+            <button class="install-btn secondary" id="dismissBtn">Not Now</button>
+        </div>
+    </div>
+
     <script>
+        // PWA Variables
+        let deferredPrompt;
+        let installPrompt = document.getElementById('installPrompt');
+        let installBtn = document.getElementById('installBtn');
+        let dismissBtn = document.getElementById('dismissBtn');
+
+        // PWA Install Prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            
+            // Show install prompt after 3 seconds
+            setTimeout(() => {
+                if (deferredPrompt && !localStorage.getItem('installDismissed')) {
+                    installPrompt.classList.add('show');
+                }
+            }, 3000);
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                }
+                deferredPrompt = null;
+                installPrompt.classList.remove('show');
+            }
+        });
+
+        dismissBtn.addEventListener('click', () => {
+            installPrompt.classList.remove('show');
+            localStorage.setItem('installDismissed', 'true');
+        });
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then((registration) => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
         // Load the questions data
         let questions = [];
         let currentQuestionIndex = 0;

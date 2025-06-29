@@ -1,0 +1,25 @@
+{
+  "name": "AWS CCP Study Tool",
+  "short_name": "AWS CCP",
+  "description": "Interactive AWS Certified Cloud Practitioner study tool with 74 practice questions",
+  "start_url": "/aws-ccp-study-tool/aws-ccp-study.html",
+  "display": "standalone",
+  "background_color": "#0f0f23",
+  "theme_color": "#64ffda",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMwZjBmMjMiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSIjNjRmZmRhIj4KPHBhdGggZD0iTTEyIDJMMiA3djEwYzAgNS41IDQuNSA5IDEwIDloMGM1LjUgMCAxMC0zLjUgMTAtOVY3bC0xMC01em0wIDJsOCA0djEwYzAgMy45LTMuMSA3LTcgN3MtNy0zLjEtNy03VjZsOC00eiIvPgo8cGF0aCBkPSJNMTIgNkw2IDl2N2MwIDMuMyAyLjcgNiA2IDZzNi0yLjcgNi02VjlsLTYtM3oiLz4KPC9zdmc+Cjwvc3ZnPgo=",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiMwZjBmMjMiLz4KPHN2ZyB4PSIxMjgiIHk9IjEyOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzY0ZmZkYSI+CjxwYXRoIGQ9Ik0xMiAyTDIgN3YxMGMwIDUuNSA0LjUgOSAxMCA5aDBjNS41IDAgMTAtMy41IDEwLTlWN2wtMTAtNXptMCAybDggNHYxMGMwIDMuOS0zLjEgNy03IDdzLTctMy4xLTctN1Y2bDgtNHoiLz4KPHBhdGggZD0iTTEyIDZMNiA5djdjMCAzLjMgMi43IDYgNiA2czYtMi43IDYtNlY5bC02LTN6Ii8+Cjwvc3ZnPgo8L3N2Zz4K",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "lang": "en",
+  "scope": "/aws-ccp-study-tool/"
+} 
